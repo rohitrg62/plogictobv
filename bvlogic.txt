@@ -1,0 +1,1 @@
+concat(bvand(extract(A,2,2), extract(B,2,2)), bvand(extract(A,1,1),extract(B,1,1)))
