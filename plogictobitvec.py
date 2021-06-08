@@ -12,6 +12,73 @@ class Node:
         temp = Node(key)
         return temp
 
+
+
+def convertplogictosimplebv(x):
+    s = []
+    pos = 0
+    temp = ""
+    while x[pos] != "(":
+        temp += x[pos]
+        pos += 1
+    if temp == "and":
+        temp = "bvand"
+
+    elif temp == "or":
+        temp = "bvor"
+    elif temp == "not":
+        temp = "bvnot"
+    elif temp == "xor":
+        temp = "bvxor" 
+    
+    root = Node.newNode(temp)
+    s.append(root)
+    pos += 1
+    node = root
+    length = len(x)
+    while(s):
+        temp = ""
+        node = s.pop()
+        print(node.key)
+        s.append(node)
+        while x[pos] != '(' and x[pos] != ',' and x[pos] != ')':
+            temp+=x[pos]
+            pos+=1
+        if x[pos] == ")":
+            s.pop()
+
+        if temp != "":
+            if temp.find('_') != -1:
+                tempnode = Node.newNode("extract")
+                loc = temp.find('_')
+                tempnode.child.append(Node.newNode(temp[:loc]))
+                tempnode.child.append(Node.newNode(temp[loc+1:]))
+                tempnode.child.append(Node.newNode(temp[loc+1:]))
+                node.child.append(tempnode)
+
+            else:
+                if temp == "and":
+                    temp = "bvand"
+
+                elif temp == "or":
+                    temp = "bvor"
+
+                elif temp == "not":
+                    temp = "bvnot"
+                elif temp == "xor":
+                    temp = "bvxor" 
+
+                newnode = Node.newNode(temp)
+                node.child.append(newnode)
+                if x[pos] == "(":
+                    s.append(newnode)
+
+        pos+=1
+        if pos == length:
+            break
+
+    return root
+
 def createTree(x):
     s = []
     pos = 0
@@ -57,6 +124,9 @@ def createTree(x):
         
 
     return root
+
+
+
 
 
 def properties(tree):
@@ -127,7 +197,7 @@ def properties(tree):
             ret_tree = createTree(ret_logic)
             ret_tree.child[0] = tree.child[0].child[0]
             return ret_tree
-    return None
+    return tree
 
 
 def postorder(tree):
@@ -136,7 +206,7 @@ def postorder(tree):
         ret = properties(tree.child[i])
        
         if ret is not None:
-            preorder(ret)
+            # preorder(ret)
             tree.child[i] = ret
     # print(tree.key)
     # properties(tree)
@@ -161,10 +231,14 @@ def main():
     x = x.lower()
     print(x)
     # print(len(x))
-    tree = createTree(x);
+    # tree = createTree(x);
+    tree = convertplogictosimplebv(x)
     # print(tree.key)
-    # preorder(tree)    
+    print("original Tree:\n")
+    preorder(tree)
+    print("original Tree:\n")
     tree = postorder(tree)
+    preorder(tree)
     tree = properties(tree)
     print("\nFinal Output: \n")
     preorder(tree)
@@ -199,5 +273,3 @@ if __name__=="__main__":
 #         newexpr = simplifyPattern(oldexpr)
     
 #     return newexpr
-
-
