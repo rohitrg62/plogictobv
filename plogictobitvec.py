@@ -63,12 +63,12 @@ def convertplogictosimplebv(x):
                 dic[node]=2
             if temp.find('_') != -1:
                 tempnode = Node.newNode("extract")
-                loc = temp.find('_')
-                tempnode.child.append(Node.newNode(temp[:loc]))
-                if temp[:loc] not in variables:
-                    variables.append(temp[:loc])
-                tempnode.child.append(Node.newNode(temp[loc+1:]))
-                tempnode.child.append(Node.newNode(temp[loc+1:]))
+                loc = temp.split('_')
+                tempnode.child.append(Node.newNode(loc[0]))
+                if loc[0] not in variables:
+                    variables.append(loc[0])
+                tempnode.child.append(Node.newNode(loc[1]))
+                tempnode.child.append(Node.newNode(loc[2]))
                 node.child.append(tempnode)
 
             else:
