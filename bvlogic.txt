@@ -1,1 +1,1 @@
-or(And(a_2,b_2),And(a_1,b_1))
+or(And(a_2,b_2,c_2),And(a_1,xor(a_3,b_3,c_3),c_1),b_1)

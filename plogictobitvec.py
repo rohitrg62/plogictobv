@@ -16,11 +16,13 @@ class Node:
 
 def convertplogictosimplebv(x):
     s = []
+    dic = {}
     pos = 0
     temp = ""
     while x[pos] != "(":
         temp += x[pos]
         pos += 1
+    
     if temp == "and":
         temp = "bvand"
 
@@ -30,9 +32,11 @@ def convertplogictosimplebv(x):
         temp = "bvnot"
     elif temp == "xor":
         temp = "bvxor" 
-    
+    elif pos == 0:
+        temp = "concat"
     root = Node.newNode(temp)
     s.append(root)
+    dic[root] = 0
     pos += 1
     node = root
     length = len(x)
@@ -44,10 +48,19 @@ def convertplogictosimplebv(x):
         while x[pos] != '(' and x[pos] != ',' and x[pos] != ')':
             temp+=x[pos]
             pos+=1
-        if x[pos] == ")":
-            s.pop()
+       
 
         if temp != "":
+            dic[node]+=1
+            print(node.key," ",dic[node]) 
+            if dic[node] > 2:
+                temp_n = node.child[1]
+                node.child[1] = Node.newNode(node.key)
+                s.pop()
+                s.append(node.child[1])
+                node.child[1].child.append(temp_n)
+                node = node.child[1]
+                dic[node]=2
             if temp.find('_') != -1:
                 tempnode = Node.newNode("extract")
                 loc = temp.find('_')
@@ -72,7 +85,16 @@ def convertplogictosimplebv(x):
                 node.child.append(newnode)
                 if x[pos] == "(":
                     s.append(newnode)
+                    dic[newnode] = 0
 
+
+        if x[pos] == ")":
+            del dic[s.pop()]
+
+        
+
+        
+        
         pos+=1
         if pos == length:
             break
@@ -236,7 +258,7 @@ def main():
     # print(tree.key)
     print("original Tree:\n")
     preorder(tree)
-    print("original Tree:\n")
+    print("new Tree:\n")
     tree = postorder(tree)
     preorder(tree)
     tree = properties(tree)
