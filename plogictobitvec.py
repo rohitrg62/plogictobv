@@ -13,7 +13,7 @@ class Node:
         return temp
 
 
-
+variables = []
 def convertplogictosimplebv(x):
     s = []
     dic = {}
@@ -43,7 +43,7 @@ def convertplogictosimplebv(x):
     while(s):
         temp = ""
         node = s.pop()
-        print(node.key)
+        # print(node.key)
         s.append(node)
         while x[pos] != '(' and x[pos] != ',' and x[pos] != ')':
             temp+=x[pos]
@@ -52,7 +52,7 @@ def convertplogictosimplebv(x):
 
         if temp != "":
             dic[node]+=1
-            print(node.key," ",dic[node]) 
+            # print(node.key," ",dic[node]) 
             if dic[node] > 2:
                 temp_n = node.child[1]
                 node.child[1] = Node.newNode(node.key)
@@ -65,6 +65,8 @@ def convertplogictosimplebv(x):
                 tempnode = Node.newNode("extract")
                 loc = temp.find('_')
                 tempnode.child.append(Node.newNode(temp[:loc]))
+                if temp[:loc] not in variables:
+                    variables.append(temp[:loc])
                 tempnode.child.append(Node.newNode(temp[loc+1:]))
                 tempnode.child.append(Node.newNode(temp[loc+1:]))
                 node.child.append(tempnode)
@@ -245,6 +247,23 @@ def preorder(tree):
         preorder(children)
     return
 
+ret = ""
+def final_output(tree):
+    global ret
+    if tree.key not in variables and not tree.key.isnumeric():
+        if ret != "" and ret[-1] == ")":
+            ret+="," 
+        ret+=tree.key+"("
+    else:
+        ret+=tree.key+","
+    for children in tree.child:
+        final_output(children)
+    if tree.key not in variables and not tree.key.isnumeric(): 
+        if ret[-1] == ",":
+            ret = ret[:-1]  
+        ret+=")"
+    return None
+
 def main():
     f = open("bvlogic.txt")
     x = f.read()
@@ -257,13 +276,22 @@ def main():
     tree = convertplogictosimplebv(x)
     # print(tree.key)
     print("original Tree:\n")
-    preorder(tree)
-    print("new Tree:\n")
+    # preorder(tree)
+    global ret
+    ret = ""
+    final_output(tree)
+    print(ret,"\n")
+    # print("new Tree:\n")
     tree = postorder(tree)
-    preorder(tree)
+    # preorder(tree)
     tree = properties(tree)
     print("\nFinal Output: \n")
-    preorder(tree)
+    # preorder(tree)
+    # print("\nEnd Output: \n")
+    ret = ""
+    final_output(tree)
+    
+    print(ret)
 
 
 
