@@ -1,0 +1,9 @@
+
+					##############################
+Number Of Gates before:  333
+Number Of Gates After:  333
+
+					##############################
+
+
+Property  6  occurs:  57

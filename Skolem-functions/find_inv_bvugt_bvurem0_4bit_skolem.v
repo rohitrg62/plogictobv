@@ -1,0 +1,245 @@
+// Benchmark "SKOLEMFORMULA" written by ABC on Mon May  4 05:26:54 2020
+
+module SKOLEMFORMULA ( 
+    i0, i1, i2, i3, i4, i5, i6, i7,
+    i8, i9, i10, i11  );
+  input  i0, i1, i2, i3, i4, i5, i6, i7;
+  output i8, i9, i10, i11;
+  wire n13, n14, n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, n26,
+    n27, n28, n29, n30, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41,
+    n42, n43, n44, n45, n46, n47, n48, n49, n50, n51, n52, n53, n54, n56,
+    n57, n58, n59, n60, n61, n62, n63, n64, n65, n66, n67, n68, n69, n70,
+    n71, n72, n73, n74, n75, n76, n77, n78, n79, n80, n81, n82, n83, n84,
+    n85, n86, n87, n88, n89, n90, n91, n92, n93, n94, n95, n96, n97, n98,
+    n99, n100, n101, n102, n103, n104, n105, n106, n107, n109, n110, n111,
+    n112, n113, n114, n115, n116, n117, n118, n119, n120, n121, n122, n123,
+    n124, n125, n126, n127, n128, n129, n130, n131, n132, n133, n134, n135,
+    n136, n137, n138, n139, n140, n141, n142, n143, n144, n145, n146, n147,
+    n148, n149, n150, n151, n152, n153, n154, n155, n156, n157, n158, n159,
+    n160, n161, n162, n163, n164, n165, n166, n167, n168, n169, n170, n171,
+    n172, n173, n174, n175, n176, n177, n178, n179, n180, n181, n182, n183,
+    n184, n185, n186, n187, n188, n189, n190, n191, n192, n193, n194, n195,
+    n196, n197, n198, n199, n200, n201, n202, n203, n204, n205, n206, n207,
+    n208, n209, n210, n211, n212, n213, n214, n215, n216, n217, n218, n219,
+    n220, n221, n222, n223, n224, n225, n226, n227, n228, n229;
+  assign n13 = i0 & ~i1;
+  assign n14 = i2 & n13;
+  assign n15 = ~i3 & n14;
+  assign n16 = ~i4 & n15;
+  assign n17 = ~i5 & n16;
+  assign n18 = i6 & n17;
+  assign n19 = ~i7 & n18;
+  assign n20 = i3 & n14;
+  assign n21 = ~i4 & n20;
+  assign n22 = ~i5 & n21;
+  assign n23 = i6 & n22;
+  assign n24 = i7 & n23;
+  assign n25 = i2 & ~i4;
+  assign n26 = i2 & ~n25;
+  assign n27 = i2 & i4;
+  assign n28 = ~i5 & n27;
+  assign n29 = n26 & ~n28;
+  assign n30 = ~n19 & ~n29;
+  assign i10 = ~n24 & n30;
+  assign n32 = ~i0 & i1;
+  assign n33 = i2 & n32;
+  assign n34 = i3 & n33;
+  assign n35 = i4 & n34;
+  assign n36 = i5 & n35;
+  assign n37 = i6 & n36;
+  assign n38 = ~i7 & n37;
+  assign n39 = i6 & n35;
+  assign n40 = ~i7 & n39;
+  assign n41 = i10 & n40;
+  assign n42 = ~i3 & n33;
+  assign n43 = i4 & n42;
+  assign n44 = ~i6 & n43;
+  assign n45 = i7 & n44;
+  assign n46 = i10 & n45;
+  assign n47 = i5 & n43;
+  assign n48 = ~i6 & n47;
+  assign n49 = i7 & n48;
+  assign n50 = i1 & ~i10;
+  assign n51 = i1 & ~n50;
+  assign n52 = ~n38 & ~n51;
+  assign n53 = ~n41 & ~n52;
+  assign n54 = ~n46 & n53;
+  assign i8 = ~n49 & ~n54;
+  assign n56 = i0 & i1;
+  assign n57 = ~i2 & n56;
+  assign n58 = i3 & n57;
+  assign n59 = i4 & n58;
+  assign n60 = i5 & n59;
+  assign n61 = ~i6 & n60;
+  assign n62 = ~i7 & n61;
+  assign n63 = ~i8 & n62;
+  assign n64 = i10 & n63;
+  assign n65 = i4 & n15;
+  assign n66 = ~i6 & n65;
+  assign n67 = i7 & n66;
+  assign n68 = i10 & n67;
+  assign n69 = i5 & n42;
+  assign n70 = ~i6 & n69;
+  assign n71 = i7 & n70;
+  assign n72 = ~i8 & n71;
+  assign n73 = i10 & n72;
+  assign n74 = n45 & i8;
+  assign n75 = i10 & n74;
+  assign n76 = ~i4 & n58;
+  assign n77 = i5 & n76;
+  assign n78 = ~i6 & n77;
+  assign n79 = i7 & n78;
+  assign n80 = ~i8 & n79;
+  assign n81 = i10 & n80;
+  assign n82 = ~i6 & n76;
+  assign n83 = i7 & n82;
+  assign n84 = ~i8 & n83;
+  assign n85 = i10 & n84;
+  assign n86 = i5 & n15;
+  assign n87 = ~i6 & n86;
+  assign n88 = i7 & n87;
+  assign n89 = i10 & n88;
+  assign n90 = ~i6 & ~i10;
+  assign n91 = ~i5 & n90;
+  assign n92 = ~i4 & n91;
+  assign n93 = i3 & n92;
+  assign n94 = i7 & n93;
+  assign n95 = i4 & n91;
+  assign n96 = ~n94 & ~n95;
+  assign n97 = i5 & n90;
+  assign n98 = n96 & ~n97;
+  assign n99 = ~i6 & i10;
+  assign n100 = n98 & ~n99;
+  assign n101 = ~i6 & n100;
+  assign n102 = ~n64 & ~n101;
+  assign n103 = ~n68 & n102;
+  assign n104 = ~n73 & n103;
+  assign n105 = ~n75 & n104;
+  assign n106 = ~n81 & n105;
+  assign n107 = ~n85 & n106;
+  assign i11 = ~n89 & n107;
+  assign n109 = ~i0 & ~i1;
+  assign n110 = i2 & n109;
+  assign n111 = ~i3 & n110;
+  assign n112 = i4 & n111;
+  assign n113 = i5 & n112;
+  assign n114 = ~i6 & n113;
+  assign n115 = ~i7 & n114;
+  assign n116 = ~i6 & n35;
+  assign n117 = ~i8 & n116;
+  assign n118 = i10 & n117;
+  assign n119 = i11 & n118;
+  assign n120 = i5 & n34;
+  assign n121 = ~i6 & n120;
+  assign n122 = ~i8 & n121;
+  assign n123 = i10 & n122;
+  assign n124 = i11 & n123;
+  assign n125 = n48 & i8;
+  assign n126 = i3 & n56;
+  assign n127 = i4 & n126;
+  assign n128 = i5 & n127;
+  assign n129 = ~i6 & n128;
+  assign n130 = ~i7 & n129;
+  assign n131 = ~i8 & n130;
+  assign n132 = ~i11 & n131;
+  assign n133 = i10 & n87;
+  assign n134 = i11 & n133;
+  assign n135 = ~i6 & n14;
+  assign n136 = i7 & n135;
+  assign n137 = ~i11 & n136;
+  assign n138 = ~i6 & n15;
+  assign n139 = i7 & n138;
+  assign n140 = i10 & n139;
+  assign n141 = ~i3 & n57;
+  assign n142 = ~i4 & n141;
+  assign n143 = i5 & n142;
+  assign n144 = ~i6 & n143;
+  assign n145 = ~i7 & n144;
+  assign n146 = ~i8 & n145;
+  assign n147 = i10 & n146;
+  assign n148 = i11 & n147;
+  assign n149 = ~i4 & n126;
+  assign n150 = ~i6 & n149;
+  assign n151 = i7 & n150;
+  assign n152 = ~i8 & n151;
+  assign n153 = ~i11 & n152;
+  assign n154 = i10 & n66;
+  assign n155 = i11 & n154;
+  assign n156 = i2 & n56;
+  assign n157 = i3 & n156;
+  assign n158 = i4 & n157;
+  assign n159 = i6 & n158;
+  assign n160 = ~i7 & n159;
+  assign n161 = ~i8 & n160;
+  assign n162 = i1 & i2;
+  assign n163 = ~i3 & n162;
+  assign n164 = i4 & n163;
+  assign n165 = i5 & n164;
+  assign n166 = ~i6 & n165;
+  assign n167 = i7 & n166;
+  assign n168 = ~i2 & ~i11;
+  assign n169 = ~i7 & n168;
+  assign n170 = ~i6 & n169;
+  assign n171 = i6 & n169;
+  assign n172 = i10 & n171;
+  assign n173 = ~n170 & ~n172;
+  assign n174 = i7 & n168;
+  assign n175 = n173 & ~n174;
+  assign n176 = i2 & ~i11;
+  assign n177 = ~i6 & n176;
+  assign n178 = ~i7 & n177;
+  assign n179 = i4 & n178;
+  assign n180 = n175 & ~n179;
+  assign n181 = i7 & n177;
+  assign n182 = n180 & ~n181;
+  assign n183 = i6 & n176;
+  assign n184 = ~i5 & n183;
+  assign n185 = n182 & ~n184;
+  assign n186 = ~i6 & i11;
+  assign n187 = ~i10 & n186;
+  assign n188 = i8 & n187;
+  assign n189 = i1 & n188;
+  assign n190 = ~i2 & n189;
+  assign n191 = n185 & ~n190;
+  assign n192 = i10 & n186;
+  assign n193 = ~i0 & n192;
+  assign n194 = ~i7 & n193;
+  assign n195 = n191 & ~n194;
+  assign n196 = i7 & n193;
+  assign n197 = ~i3 & n196;
+  assign n198 = n195 & ~n197;
+  assign n199 = i6 & i11;
+  assign n200 = ~i10 & n199;
+  assign n201 = n198 & ~n200;
+  assign n202 = i10 & n199;
+  assign n203 = ~i2 & n202;
+  assign n204 = ~i0 & n203;
+  assign n205 = ~i5 & n204;
+  assign n206 = ~i3 & n205;
+  assign n207 = n201 & ~n206;
+  assign n208 = i5 & n204;
+  assign n209 = n207 & ~n208;
+  assign n210 = i0 & n203;
+  assign n211 = i8 & n210;
+  assign n212 = n209 & ~n211;
+  assign n213 = i2 & n202;
+  assign n214 = i7 & n213;
+  assign n215 = n212 & ~n214;
+  assign n216 = ~n115 & n215;
+  assign n217 = ~n119 & ~n216;
+  assign n218 = ~n124 & n217;
+  assign n219 = ~n125 & ~n218;
+  assign n220 = ~n132 & n219;
+  assign n221 = ~n134 & n220;
+  assign n222 = ~n137 & n221;
+  assign n223 = ~n140 & n222;
+  assign n224 = ~n148 & n223;
+  assign n225 = ~n153 & n224;
+  assign n226 = ~n153 & n225;
+  assign n227 = ~n155 & n226;
+  assign n228 = ~n161 & n227;
+  assign n229 = ~n19 & ~n228;
+  assign i9 = ~n167 & n229;
+endmodule
+
+

@@ -1,0 +1,9 @@
+
+					##############################
+Number Of Gates before:  2302
+Number Of Gates After:  2302
+
+					##############################
+
+
+Property  6  occurs:  48

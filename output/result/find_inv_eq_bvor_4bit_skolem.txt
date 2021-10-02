@@ -1,0 +1,10 @@
+
+					##############################
+Number Of Gates before:  544
+Number Of Gates After:  524
+
+					##############################
+
+
+Property  6  occurs:  35
+Property  7  occurs:  4

@@ -1,0 +1,1 @@
+concat(bvor(extract(bvnot(inp_1),4,4),bvand(extract(bvnot(inp_0),4,4),bvand(extract(bvnot(inp_0),3,3),extract(inp_1,4,4)))))

@@ -1,0 +1,1 @@
+concat(extract(bvnot(inp_0),4,4),extract(bvnot(inp_0),2,2),extract(bvnot(inp_0),3,3),extract(bvnot(inp_0),1,1))

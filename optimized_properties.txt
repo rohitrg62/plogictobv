@@ -1,0 +1,13 @@
+bvxor(extract(inpt_1,b_1,b_1),extract(inpt_2,b_2,b_2))
+extract(bvor(inpt_1,inpt_2),b_1,b_2)
+extract(bvand(inpt_1,inpt_2),b_1,b_2)
+extract(bvand(inpt_1,inpt_2),b_1,b_1)
+extract(bvor(inpt_1,inpt_2),b_1,b_1)
+extract(bvnot(inpt_1),b_1,b_2)    
+extract(bvnot(bvand(inpt_1,inpt_2),b_1,b_1))          
+extract(bvnot(bvor(inpt_1,inpt_2),b_1,b_1))  
+extract(bvor(inpt_1,bvnot(bvand(inpt_2,inpt_1))),b_1,b_1)
+extract(bvor(bvnot(inpt_1),bvand(inpt_2,inpt_1)),b_1,b_1)
+extract(A,n,k)   
+extract(A,k,1)       
+A

@@ -1,0 +1,10 @@
+
+					##############################
+Number Of Gates before:  36523
+Number Of Gates After:  36523
+
+					##############################
+
+
+Property  6  occurs:  67
+Property  4  occurs:  1

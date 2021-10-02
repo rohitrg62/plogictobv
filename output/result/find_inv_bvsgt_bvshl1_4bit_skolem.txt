@@ -1,0 +1,9 @@
+
+					##############################
+Number Of Gates before:  1725
+Number Of Gates After:  1725
+
+					##############################
+
+
+Property  6  occurs:  35
